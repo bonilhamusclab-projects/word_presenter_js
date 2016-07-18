@@ -4,7 +4,12 @@
     <meta charset="utf-8">
     <title>Word Presenter</title>
     <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script>
+      //needed for bootstrap
+      //https://github.com/chentsulin/electron-react-boilerplate/issues/163
+      window.$ = window.jQuery = require('./jquery-3.1.0.min.js')
+    </script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
     <script>
       (function() {
         if (!process.env.HOT) {

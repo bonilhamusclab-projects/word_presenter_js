@@ -12,14 +12,15 @@ function patientWordToHtml(patient_word) {
     return is_real == undefined ? '' :
       is_real ? 'btn-success' : 'btn-danger'
   }
+  console.log(patient_word)
   return (
     <tr>
       <td>{patient_word.word}</td>
-      <td className={isRealToClass(patient_word.is_real)}>
+      <td className={isRealToClass(patient_word.is_real == "true")}>
         {patient_word.is_real}
       </td>
       <td className={isRealToClass(patient_word.patient_is_real)}>
-        {patient_word.patient_is_real}
+        {`${patient_word.patient_is_real}`}
       </td>
       <td>{patient_word.time}</td>
     </tr>
@@ -29,6 +30,7 @@ function patientWordToHtml(patient_word) {
 export default class ViewResults extends Component {
   constructor(props) {
     super(props)
+    console.log(props)
   }
   saveresults(self) {
     var results_path = remote.dialog.showSaveDialog({defaultPath: "."})
